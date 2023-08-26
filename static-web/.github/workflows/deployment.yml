@@ -48,6 +48,5 @@ jobs:
 
       - name: "Deploy to AWS Prod WebApp"
         if:  inputs.target-env == 'Production'
-        needs: [Staging]
         id: deploy-to-webapp-prod
         run: aws s3 sync ./out s3://[hs-trigger-bucket]   #Web Prod
